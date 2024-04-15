@@ -10,7 +10,7 @@ let datos = ref([{}])
 
 
 
-
+/** cONSULTA LA API PARA TRAER LOS PRODUCTOS | DEBERIA HACERSE EN UNA SOLA CLASE */
 async function mounted() {
   try {
     const respuesta = await fetch("https://fakestoreapi.com/products");
@@ -28,7 +28,8 @@ mounted();
 </script>
 
 <template>
-  
+
+    <!-- RECORRE EL JSON DEL PRDUCTO Y PASA UNO POR TARJETA -->
     <div class="row mi-componente justify-content-center">
       <Card class="col-4" v-for="dato in datos" :id="dato.id" :titulo="dato.title" :precio="dato.price" :imagen="dato.image" ></Card>      >
    

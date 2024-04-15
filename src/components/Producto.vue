@@ -13,6 +13,7 @@ const props = defineProps<{
 
 let dato = ref([{}])
 
+// CONSULTA LA API EN BUSQUEDA DEL PRODUCTO | TIENE QUE SER MODULAR
 async function mounted() {
   try {
     console.log("https://fakestoreapi.com/products/" + props.id);
@@ -33,14 +34,19 @@ mounted();
 
   <div class="card m-2 mi-componente text-center">
     <div class="card-header">
+      <!-- TITULO DEL PRODUCTO -->
       <h2 class="fw-bold text-info">{{ dato.title }}</h2>
     </div>
     <div class="card-body">
+      <!-- IMAGEN DEL PRODUCTO -->
       <img :src="dato.image" class="img-fluid" alt="">
     </div>
       
     <div class="card-footer">
+      <!-- PRECIO DEL PODUCTO -->
       <h3>${{dato.price}}</h3>
+
+      <!-- DESCRIPCION DEL PRODUCTO -->
       <p>{{dato.description}}</p>
     </div>
     
